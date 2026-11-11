@@ -13,7 +13,7 @@ public class Library {
 	public void displayDetailBook() { // gibt alle Infos zu allen Büchern aus
 		ArrayList<Book> books = DatabaseManager.getAllBooks();
 		for (Book book: books) {
-			book.displayDetails();			
+			book.displayDetails();
 		}
 	}
 	

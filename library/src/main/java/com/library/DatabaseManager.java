@@ -90,7 +90,7 @@ public class DatabaseManager {
             }
             else {
                 System.out.println("Das Buch mit dem Title "+title+" wurde gelöscht. Es wurde "+affectedRows+" Buch gelöscht.");
-            }            
+            }
         }
         catch (SQLException e) {
             System.err.println("Fehler beim löschen des Buches "+ e.getMessage());
@@ -102,7 +102,7 @@ public class DatabaseManager {
         ArrayList<Book> books = new ArrayList<>();
         String sql = "SELECT title, author, pages FROM books WHERE title = ?";
         try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, title);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
@@ -123,7 +123,7 @@ public class DatabaseManager {
         ArrayList<Book> books = new ArrayList<>();
         String sql = "SELECT title, author, pages FROM books WHERE author = ?";
         try (Connection conn = connect();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, author);
             ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {

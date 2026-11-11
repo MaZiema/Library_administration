@@ -5,7 +5,7 @@ public class Biblothek {
 
 	public static void main(String[] args) {
 		
-		String pages;
+		int pages;
 		String author;
 		String title;
 		
@@ -24,10 +24,9 @@ public class Biblothek {
                             System.out.println("4. Möchten Sie nach einem bestimmten Author suchen?");
                             System.out.println("5. Möchten Sie ein Buch aus der Biblothek löschen?");
                             System.out.println("6. Möchten Sie das Programm beenden?");
-                            String response = scanner.nextLine();
-                            int convertedResponse = Integer.parseInt(response);
+                            int response = Integer.parseInt(scanner.nextLine());
                             
-                            switch(convertedResponse) {
+                            switch(response) {
                                 case 1: // Ein Buch wird aufgenommen
                                     System.out.println("Geben Sie den Namen des Buches ein:");
                                     title = scanner.nextLine();
@@ -36,11 +35,10 @@ public class Biblothek {
                                     author = scanner.nextLine();
                                     
                                     System.out.println("Geben Sie die Anzahl der Seiten ein:");
-                                    pages = scanner.nextLine();
-                                    int convertedPages = Integer.parseInt(pages);
+                                    pages = Integer.parseInt(scanner.nextLine());
                                     
-                                    Book newBook = new Book(title,author,convertedPages); // erstellt ein neues Buch
-                                    library.addBook(newBook);                                    
+                                    Book newBook = new Book(title,author,pages); // erstellt ein neues Buch
+                                    library.addBook(newBook);
                                     System.out.println(); // Platzhalter in der Console für Übersicht
                                     System.out.println("Was möchten Sie als nächstes tun?");
                                     break;
@@ -53,7 +51,7 @@ public class Biblothek {
                                     
                                 case 3: // Der Titel wird gesucht
                                     System.out.println("Geben Sie den Namen des Buches ein, welches Sie suchen:");
-                                    String searchTitle =scanner.nextLine();
+                                    String searchTitle = scanner.nextLine();
                                     library.findBookByTitle(searchTitle);
                                     System.out.println(); // Platzhalter in der Console für Übersicht
                                     System.out.println("Was möchten Sie als nächstes tun?");
@@ -61,15 +59,15 @@ public class Biblothek {
                                     
                                 case 4: // Author wird gesucht
                                     System.out.println("Geben Sie den Namen des Authoren ein, welchen Sie suchen:");
-                                    String searchAuthor =scanner.nextLine();
+                                    String searchAuthor = scanner.nextLine();
                                     library.findBookByAuthor(searchAuthor);
                                     System.out.println(); // Platzhalter in der Console für Übersicht
                                     System.out.println("Was möchten Sie als nächstes tun?");
                                     break;
-                                
+                                    
                                 case 5: // Ein Buch wird gelöscht anhand des Titels
                                     System.out.println("Geben Sie den Namen des Buches ein, welches Sie löschen möchten:");
-                                    String deletAuthor =scanner.nextLine();
+                                    String deletAuthor = scanner.nextLine();
                                     library.deleteBook(deletAuthor);
                                     System.out.println(); // Platzhalter in der Console für Übersicht
                                     System.out.println("Was möchten Sie als nächstes tun?");
@@ -79,7 +77,7 @@ public class Biblothek {
                                     run = false;
                                     inputCheck = false;
                                     break;
-                                        
+                                    
                                 default:
                                     System.out.println("Tut uns leid diese Option gibt es leider nicht");
                                     System.out.println(); // Platzhalter in der Console für Übersicht
